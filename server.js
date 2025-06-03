@@ -17,6 +17,12 @@ app.post('/webhook/qiscus/test', (req, res) => {
   res.status(200).send('Webhook received');
 });
 
+app.post('/webhook/qiscus/resolve-conversation', (req, res) => {
+  console.log('Received Qiscus webhook for resolve conversation:');
+  console.log(JSON.stringify(req.body, null, 2));
+  res.status(200).send('Webhook received');
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
